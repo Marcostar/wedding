@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <!-- This viewport tag is essential for responsive design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated title as you provided -->
     <title>Shivani Weds Sagar</title>
     
-    <!-- Load Tailwind CSS for styling -->
+    <!-- Load Tailwind CSS for styling (though we won't use it for the iframe) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <style>
@@ -16,24 +17,44 @@
             padding: 0;
             overflow: hidden; /* Prevent any potential scrollbars */
         }
+
+        /* This is the fix. We create a class to style the iframe.
+        */
+        .fullscreen-iframe {
+            /* Set width to 100% of the viewport width */
+            width: 100vw; 
+
+            /* This is the fallback for older browsers that don't
+              support dvh (dynamic viewport height).
+            */
+            height: 100vh; 
+
+            /* This is the modern solution. 
+              dvh = dynamic viewport height.
+              It correctly resizes to fit the visible screen area
+              on mobile browsers like Safari.
+            */
+            height: 100dvh; 
+
+            /* Remove the border */
+            border: 0;
+        }
     </style>
 </head>
 <body>
 
     <!-- 
       Iframe
-      - `w-screen`: 100% of the viewport width
-      - `h-screen`: 100% of the viewport height
-      - `border-0`: Remove any default iframe border
+      - We are now using our custom 'fullscreen-iframe' class
+        instead of the Tailwind 'w-screen h-screen' classes.
     -->
     <iframe 
         allowfullscreen="allowfullscreen" 
         allow="clipboard-write" 
         scrolling="no" 
-        class="w-screen h-screen border-0" 
+        class="fullscreen-iframe" 
         src="https://heyzine.com/flip-book/dc92f7a311.html">
     </iframe>
 
 </body>
-
 </html>
