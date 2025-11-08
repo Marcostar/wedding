@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- This viewport tag is essential for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Iframe</title>
+    
+    <!-- Load Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Remove default body margin to prevent scrollbars */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent any potential scrollbars */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 
+      Iframe
+      - `w-screen`: 100% of the viewport width
+      - `h-screen`: 100% of the viewport height
+      - `border-0`: Remove any default iframe border
+    -->
+    <iframe 
+        allowfullscreen="allowfullscreen" 
+        allow="clipboard-write" 
+        scrolling="no" 
+        class="w-screen h-screen border-0" 
+        src="https://heyzine.com/flip-book/dc92f7a311.html">
+    </iframe>
+
+</body>
+</html>
